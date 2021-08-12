@@ -1,0 +1,4 @@
+*.pem
+.venv
+*.swp
+encrypted-pii.json
