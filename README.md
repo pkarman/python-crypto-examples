@@ -33,3 +33,10 @@ python encrypt-json-file.py my-pii.json public.pem > encrypted-pii.json
 ```
 python decrypt-json-file.py encrypted-pii.json private.pem sekrit
 ```
+
+## Unpack encoded attachments to files
+
+```
+python unpack-encrypted-json-file.py encrypted-pii.json private.pem sekrit
+```
+

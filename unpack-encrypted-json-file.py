@@ -23,6 +23,11 @@ json_payload = ""
 with open(json_file, "rb") as jf:
     json_payload = jf.read()
 
+# show top-level keys fyi
+encrypted_payload = json_decode(json_payload)
+for key in encrypted_payload.keys():
+    print("encrypted key: {}".format(key))
+
 # same for private PEM
 private_pem = ""
 with open(private_key_file, "rb") as pf:
