@@ -45,6 +45,7 @@ payload = json_decode(jwetoken.payload.decode("utf-8"))
 for key, value in payload.items():
     if key == "attachments":
         for attached in value:
+            uuid = attached["id"]
             mime = attached["mime"]
             description = attached["description"]
             base64_encoded_file = attached["file"]
@@ -53,7 +54,7 @@ for key, value in payload.items():
             filename = f"{sha}{file_extension}"
             with open(filename, "wb") as fh:
                 fh.write(base64url_decode(base64_encoded_file))
-            print("wrote '{}' to {}".format(description, filename))
+            print("wrote {} '{}' to {}".format(uuid, description, filename))
     else:
         print("{} => {}".format(key, pprint.pformat(value)))
 
