@@ -40,3 +40,14 @@ python decrypt-json-file.py encrypted-pii.json private.pem sekrit
 python unpack-encrypted-json-file.py encrypted-pii.json private.pem sekrit
 ```
 
+## Sign a JWT with private key
+
+```
+python jwt-signed.py private.pem sekrit jwt-payload.json > jws.json
+```
+
+## Verify a signed JWT (JWS) with public key
+
+```
+python jwt-verified.py jws.json public.pem
+```

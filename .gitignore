@@ -2,3 +2,4 @@
 .venv
 *.swp
 encrypted-pii.json
+jws.json
