@@ -3,6 +3,7 @@
 import sys
 import pprint
 from jwcrypto import jwk, jwe
+from jwcrypto.jwk import InvalidJWKType
 from jwcrypto.common import json_encode, json_decode
 
 usage = "{} file.json public.pem".format(sys.argv[0])
@@ -28,7 +29,7 @@ with open(public_key_file, "rb") as pf:
 # create JWK
 public_key = jwk.JWK.from_pem(public_pem)
 try:
-  public_key.get_curve("secp256k1")
+  public_key.get_curve("P256")
   alg = "ECDH-ES+A256KW"
 except InvalidJWKType:
   alg = "RSA-OAEP-256"
