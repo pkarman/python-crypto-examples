@@ -29,7 +29,7 @@ with open(public_key_file, "rb") as pf:
 # create JWK
 public_key = jwk.JWK.from_pem(public_pem)
 try:
-  public_key.get_curve("P256")
+  public_key.get_curve("P-256")
   alg = "ECDH-ES+A256KW"
 except InvalidJWKType:
   alg = "RSA-OAEP-256"

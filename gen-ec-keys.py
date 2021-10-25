@@ -15,7 +15,7 @@ if len(sys.argv[1]) < 4:
 private_key_pw = sys.argv[1].encode("utf-8")
 
 public_key = jwk.JWK()
-private_key = jwk.JWK.generate(kty="EC", crv="P256")
+private_key = jwk.JWK.generate(kty="EC", crv="P-256")
 private_attrs = json_decode(private_key.export_public())
 public_key.import_key(**private_attrs)
 
