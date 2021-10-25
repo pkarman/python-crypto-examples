@@ -14,13 +14,27 @@
 python gen-keys.py sekrit
 ```
 
+## Generate ECDSA public/private PEM files
+
+```
+python gen-ec-keys.py sekrit
+```
+
 ## Verify public key matches private key
+
+For RSA:
 
 ```
 openssl rsa -pubout -in private.pem | diff public.pem -
 ```
 
 No difference means the public key was generated from matching private key.
+
+Similarly, for ECDSA:
+
+```
+openssl ec -pubout -in ec-private.pem | diff ec-public.pem -
+```
 
 ## Encrypt a JSON file with a public key
 

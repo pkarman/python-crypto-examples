@@ -27,8 +27,14 @@ with open(public_key_file, "rb") as pf:
 
 # create JWK
 public_key = jwk.JWK.from_pem(public_pem)
+try:
+  public_key.get_curve("secp256k1")
+  alg = "ECDH-ES+A256KW"
+except InvalidJWKType:
+  alg = "RSA-OAEP-256"
+
 protected_header = {
-    "alg": "RSA-OAEP-256",
+    "alg": alg,
     "enc": "A256GCM",
     "typ": "JWE",
     "kid": public_key.thumbprint(),
