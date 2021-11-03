@@ -26,3 +26,6 @@ public_f.close()
 private_f = open("ec-private.pem", "w")
 private_f.write(private_key.export_to_pem(True, private_key_pw).decode("utf-8"))
 private_f.close()
+
+print("private thumbprint: {}".format(private_key.thumbprint()))
+print(" public thumbprint: {}".format(public_key.thumbprint()))
