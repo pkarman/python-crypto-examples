@@ -2,6 +2,14 @@
 
 [JSON Web Encryption](https://datatracker.ietf.org/doc/html/rfc7516) experiments.
 
+## Setup
+
+```sh
+% make setup
+% . .venv/bin/activate
+% make deps
+```
+
 ## Reading list
 
 * [https://jwcrypto.readthedocs.io/en/latest/jwe.html](https://jwcrypto.readthedocs.io/en/latest/jwe.html)
